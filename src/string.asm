@@ -1,8 +1,6 @@
-format ELF64 executable 3
+format ELF64
 
-segment readable executable
-
-    global strlen
+    public strlen
 
 strlen:
     ;; rdi = string

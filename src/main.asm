@@ -8,7 +8,10 @@ include "includes/run.inc"
 include "includes/data.inc"
 include "includes/stack.inc"
 
+
 main:
+
+    extrn strlen
     printD namePrompt
     readD buffer
     printD buffer
