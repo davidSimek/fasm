@@ -6,17 +6,20 @@ entry main
 include "io.inc"
 include "run.inc"
 include "string.inc"
+include "stack.inc"
 
 main:
-    print next
-    print lol
-    print haha
-    print lol2
+    reserveS 8 ;; pointer to message
+
+    ;; print, which prints from memory
+    ;; next_len is fasm variable computed in compile time
+    mov qword [rbp-8], next
+    print [rbp-8], next_len
+
+    ;; printData which prints from data segment, needs its <name>_len part to work in fasm layer
+    printData next
     exit 0
 
 segment readable writable
 
-str next, " first ", 10
-str lol, " second ", 10
-str haha, " third " ,10
-str lol2, " fourth ", 10
+str next, "hello", 10
