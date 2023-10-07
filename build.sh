@@ -1,1 +1,1 @@
-fasm main.asm
+fasm main.asm string.asm

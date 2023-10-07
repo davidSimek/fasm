@@ -3,3 +3,8 @@ macro str var,value,sufix
     var db value, sufix
     var#_len = $ - var
 }
+
+macro resData name,bytes
+{
+    name resb bytes
+}
